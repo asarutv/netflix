@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: nginx
+      - image: chelibane/jsapp:0.1.0
         imagePullPolicy: Always
         name: myweb
 
