@@ -18,7 +18,7 @@ node {
          
           helm repo add my-charts s3://${HELM_BUCKET}/charts
           
-          helm dependency update
+          
           helm package .
           helm s3 push --force ${PACKAGE}-*.tgz my-charts
         '''
