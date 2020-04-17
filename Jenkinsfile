@@ -11,7 +11,6 @@ node {
 
     stage("buil-heming..."){
         
-        git url: 'git://github.com/asarutv/netflix.git', branch: 'dev'
         sh '''
           HELM_BUCKET=dev.isura-helm-repo
           PACKAGE=1.ms-browse
