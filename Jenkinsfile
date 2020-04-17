@@ -15,11 +15,10 @@ node {
         sh '''
           HELM_BUCKET=dev.isura-helm-repo
           PACKAGE=1.ms-browse
-          export AWS_REGION=us-east-1
          
           helm repo add my-charts s3://${HELM_BUCKET}/charts 
           
-          helm package .
+          helm package ${PACKAGE}
 
           helm s3 push --force ${PACKAGE}-*.tgz my-charts
         '''
