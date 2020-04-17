@@ -2,7 +2,7 @@
 node {  
     stage('Setup') {
       checkout scm
-       echo "Azzuuuul... seg DevBranch
+       echo "Azzuuuul... seg DevBranch"
     }
 
     stage("Deploying Netflix"){
