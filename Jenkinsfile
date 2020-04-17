@@ -17,7 +17,7 @@ node {
           export AWS_REGION=us-east-1
          
           helm repo add my-charts s3://${HELM_BUCKET}/charts
-          cd helm/${PACKAGE}
+          
           helm dependency update
           helm package .
           helm s3 push --force ${PACKAGE}-*.tgz my-charts
