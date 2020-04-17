@@ -13,7 +13,7 @@ node {
         git url: 'git://github.com/wardviaene/kubernetes-course.git', branch: 'master'
         sh '''
           HELM_BUCKET=dev.isura-helm-repo
-          PACKAGE=demo-chart
+          PACKAGE=1.ms-browse
           export AWS_REGION=us-east-1
          
           helm repo add my-charts s3://${HELM_BUCKET}/charts
