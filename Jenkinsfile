@@ -10,16 +10,17 @@ node {
     }
 
     stage("buil-heming..."){
-        git url: 'git://github.com/wardviaene/kubernetes-course.git', branch: 'master'
+        
+        git url: 'git://github.com/asarutv/netflix.git', branch: 'dev'
         sh '''
           HELM_BUCKET=dev.isura-helm-repo
           PACKAGE=1.ms-browse
           export AWS_REGION=us-east-1
          
-          helm repo add my-charts s3://${HELM_BUCKET}/charts
-          
+          helm repo add my-charts s3://${HELM_BUCKET}/charts 
           
           helm package .
+
           helm s3 push --force ${PACKAGE}-*.tgz my-charts
         '''
     }
