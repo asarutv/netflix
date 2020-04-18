@@ -20,6 +20,9 @@ node {
           helm package ${PACKAGE}
 
           helm s3 push --force ${PACKAGE}-*.tgz my-charts
+
+         cd /var/lib/jenkins/workspace/pipeline-k8s/ 
+         rm -rf ${PACKAGE}-*.tgz 
         '''
     }
 
