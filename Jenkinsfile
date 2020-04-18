@@ -13,7 +13,7 @@ node {
         
         sh '''
           HELM_BUCKET=dev.isura-helm-repo
-          PACKAGE=1.ms-browse
+          PACKAGE=ms-browse
          
           helm repo add my-charts s3://${HELM_BUCKET}/charts 
           
