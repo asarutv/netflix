@@ -1,0 +1,27 @@
+node {
+    
+    stage ("Git clone"){
+        
+        git 'https://github.com/asarutv/ng-netflix'
+    }
+    
+    stage ("building docker image"){
+        
+      sh '''
+        docker build -t ng-net .
+        docker images
+        
+      '''
+    }
+    
+    stage ("Taging docker Image"){
+      sh 'docker login -u Chelibane80 -p Tanina2008 harbor.asaru.info' 
+      sh 'docker tag ng-net:latest harbor.asaru.info/front-01/ng-net:0.0.2'
+    }
+    
+    stage("Sending Image to Harbor"){
+
+      sh 'docker push harbor.asaru.info/front-01/ng-net:0.0.2'
+      sh 'docker image rm ng-net'
+    }
+}
