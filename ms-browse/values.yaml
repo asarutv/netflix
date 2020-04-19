@@ -5,8 +5,8 @@
 replicaCount: 3
 
 image:
-  #repository: harbor.asaru.info/front-01/jsapp:0.0.0
-  repository: nginx
+  repository: harbor.asaru.info/front-01/jsapp
+  # repository: nginx
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
