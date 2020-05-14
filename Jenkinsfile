@@ -6,7 +6,7 @@ node {
     }
 
     stage("Deploying Netflix"){
-        sh 'kubectl apply -f myweb.yaml'
+        sh 'kubectl get nodes'
     }
 
 }
