@@ -6,7 +6,7 @@ node {
     }
 
     stage("Deploying Netflix"){
-        sh 'kubectl get nodes'
+        sh 'ls'
     }
 
 }
